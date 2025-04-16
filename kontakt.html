@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Koubek</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <nav class="nav-left">
+        <a href="svatby.html">Svatby</a>
+        <a href="akce.html">Soukromé akce</a>
+      </nav>
+      <h1><a href="index.html">Adam Koubek</a></h1>
+      <nav class="nav-right">
+        <a href="koncerty.html">Koncerty</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  
+    <!-- Hlavní obsah -->
+  <main>
+    <div class="textik">
+      <h2>Kontakt</h2>
+      <p>Pokud máte specifické požadavky na repertoár nebo jakékoli jiné dotazy, tak vám moc rád poradím.</p>
+      <p>Kontaktovat mě můžete <b>e-mailem, přes formulář dole, Instagramem, WhatsAppem nebo telefonicky.</b></p>
+        <p>Telefon: +420 722 376 134</p>
+        <p>koubek.adam27@gmail.com</p>
+        <div class="instagram-button">
+          <a href="https://www.instagram.com/koubek_adam/" target="_blank">
+            <img src="images/instagram.png" alt="Instagram" />
+          </a>
+        </div>
+        
+    </div>
+
+    <div class="formular">
+        <h2>Kontaktní formulář</h2>
+        <form action="https://formspree.io/f/mldjzayn" method="POST" class="contact-form">
+          <label for="email">Váš email:</label>
+          <input type="email" id="email" name="email" placeholder="Zadejte váš email" required>
+      
+          <label for="type">Na jaký typ akce mě chcete?</label>
+          <input type="text" id="type" name="type" placeholder="Např. Firemní akce, svatba..." required>
+
+          <label for="location">Kde chcete, abych zahrál?</label>
+          <input type="text" id="location" name="location" placeholder="Např. Slavkov u Brna" required>
+      
+          <label for="message">Vaše zpráva:</label>
+          <textarea id="message" name="message" placeholder="Napište vaši zprávu..." rows="5" required></textarea>
+      
+          <button type="submit">Odeslat</button>
+        </form>
+      </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Adam Koubek 2025 - Made with ♥ by <a href="https://www.instagram.com/qvent.creative/" target="_blank" class="footer-link">Qvent Creative</a></p>
+  </footer>
+  
+</body>
+</html>

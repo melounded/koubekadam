@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Koubek</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <nav class="nav-left">
+        <a href="svatby.html">Svatby</a>
+        <a href="akce.html">Soukromé akce</a>
+      </nav>
+      <h1><a href="index.html">Adam Koubek</a></h1>
+      <nav class="nav-right">
+        <a href="koncerty.html">Koncerty</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Uvodní fešák -->
+  <section class="hero" id="o-mne">
+    <img src="images/homephoto.png" alt="Úvodní fotografie" />
+    <div class="hero-text">
+      <h2>O mně</h2>
+      <p>Jmenuji se Adam Koubek a klavír mě provází už od dětství...</p>
+      <p>Od prvních tónů mě nejvíce oslovila populární a filmová hudba - žánry, ve kterých se cítím nejvíce doma a které mě nepřestávají bavit.</p>
+      <div id="more-text" class="hidden">
+        <p>Během své dosavadní hudební cesty jsem měl možnost uspořádat tři sólové koncerty, kde jsem představil své vlastní klavírní aranže známých melodií. Kromě toho již několik let doprovázím svatební obřady, nejčastěji na romantickém zámku ve Slavkově u Brna.</p>
+        <p>Rád svou hudbou dotvářím výjimečné okamžiky, a proto nabízím klavírní doprovod na svatební obřady, koncerty na firemní akce i soukromé události. Jsem otevřený novým výzvám a rád zahraji na jakékoli příležitosti, kde hudba může vytvořit nezapomenutelnou atmosféru.</p>
+        <p>Hudba je pro mě nejen vášní, ale také způsobem, jak předávat emoce a vytvářet jedinečné okamžiky. Rád se o ni podělím i s vámi.</p>
+      </div>
+      <button id="toggle-more">Více o mně</button>
+    </div>
+  </section>
+
+  <!-- Fotky -->
+  <section class="photos">
+    <h2>Fotky</h2>
+    <div class="photo-grid">
+      <div class="Foto1">
+        <img src="images/foto4.jpg" alt="Fotka 1">
+      </div>
+      <div class="Foto2">
+        <img src="images/foto8.jpg" alt="Fotka 2">
+      </div>
+      <div class="Foto3">
+        <img src="images/foto7.jpg" alt="Fotka 3">
+      </div>
+    </div>
+    <div class="instagram-button">
+      <a href="https://www.instagram.com/koubek_adam/" target="_blank">
+        <img src="images/instagram.png" alt="Instagram" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Videa -->
+  <section class="videos">
+    <h2>Videa</h2>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/bo8Jm-TUsEk?si=FE_wivOwbzMOAAOW" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/WfDSJ3ZmLnc" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Q8NiKYMwoZE?si=sIdPqVzbOBr25Zok" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="instagram-button">
+      <a href="https://www.youtube.com/@adamkoubek/featured" target="_blank">
+        <img src="images/youtube.png" alt="YouTube" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Kontakt button -->
+<section class="contact-link">
+  <a href="kontakt.html">Kontaktujte mě</a> <!-- Přesměrování na kontakt.html -->
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Adam Koubek 2025 - Made with ♥ by <a href="https://www.instagram.com/qvent.creative/" target="_blank" class="footer-link">Qvent Creative</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById("toggle-more");
+      const moreText = document.getElementById("more-text");
+  
+      toggleButton.addEventListener("click", function () {
+        moreText.classList.toggle("visible");
+  
+        if (moreText.classList.contains("visible")) {
+          toggleButton.textContent = "Méně o mně";
+        } else {
+          toggleButton.textContent = "Více o mně";
+        }
+      });
+    });
+  </script>
+
+  <!-- Modal pro full screen zobrazení obrázku -->
+  <div id="modal" class="modal">
+    <span id="close" class="close">×</span>
+    <img id="modal-img" class="modal-content animate" alt="Zvětšený obrázek">
+  </div>
+
+  <script>
+    const gridImages = document.querySelectorAll('.photo-grid img');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.getElementById('close');
+
+    gridImages.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modal.classList.remove('fade-out'); 
+        modalImg.classList.remove('zoom-out');
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Funkce pro zavření modalu s animací
+    function closeModal() {
+      modal.classList.add('fade-out'); 
+      modalImg.classList.add('zoom-out'); 
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 300); 
+    }
+  </script>
+</body>
+</html>

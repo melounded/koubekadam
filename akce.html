@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Koubek</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:wght@600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <nav class="nav-left">
+        <a href="svatby.html">Svatby</a>
+        <a href="akce.html">Soukromé akce</a>
+      </nav>
+      <h1><a href="index.html">Adam Koubek</a></h1>
+      <nav class="nav-right">
+        <a href="koncerty.html">Koncerty</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  
+    <!-- Hlavní obsah -->
+  <main>
+    <div class="textik">
+      <h2>Soukromé akce</h2>
+      <p>
+        Rád zahraji na vaší akci a připravím vystoupení na míru, které dodá události jedinečnou atmosféru. <b>Mým repertoárem je převážně populární a filmová hudba, kterou určitě každý zná a ocení.</b>
+        Ať už plánujete firemní večírek, soukromý koncert nebo jakoukoli jinou speciální událost, rád vám vytvořím hudební doprovod přesně podle vašich představ.
+        Cena je individuální a odvíjí se od délky hraní, požadavků a specifik akce.
+        Pokud máte zájem, stačí se ozvat a věřím, že společně vymyslíme ideální hudební doprovod.
+      </p>
+    </div>
+
+    <!-- Contact Link -->
+<section class="kontakt-link">
+    <a href="kontakt.html">Kontaktujte mě</a>
+</section>
+
+ <!-- Fotky -->
+ <section class="fotky">
+  <div class="photo-grid">
+    <div class="Foto1">
+      <img src="images/foto6.jpg" alt="Fotka 1">
+    </div>
+    <div class="Foto2">
+      <img src="images/foto9.jpg" alt="Fotka 2">
+    </div>
+    <div class="Foto3">
+      <img src="images/foto5.jpg" alt="Fotka 3">
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Adam Koubek 2025 - Made with ♥ by <a href="https://www.instagram.com/qvent.creative/" target="_blank" class="footer-link">Qvent Creative</a></p>
+  </footer>
+
+ <!-- Modal pro full screen zobrazení obrázku -->
+ <div id="modal" class="modal">
+  <span id="close" class="close">×</span>
+  <img id="modal-img" class="modal-content animate" alt="Zvětšený obrázek">
+</div>
+
+<script>
+  const gridImages = document.querySelectorAll('.photo-grid img');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.getElementById('close');
+
+
+  gridImages.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modal.classList.remove('fade-out'); 
+      modalImg.classList.remove('zoom-out');
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Funkce pro zavření modalu s animací
+  function closeModal() {
+    modal.classList.add('fade-out'); 
+    modalImg.classList.add('zoom-out'); 
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300); 
+  }
+</script>
+</html>

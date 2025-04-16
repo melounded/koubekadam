@@ -1,0 +1,653 @@
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --dark-grey: #333;
+    --medium-grey: #555;
+    --light-grey: #ddd;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--dark-grey);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+header {
+    background-color: var(--dark-grey);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2rem;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-right: 3rem;
+    margin-left: 3rem;
+}
+
+.nav-left {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.nav-right {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+header h1 {
+    color: var(--white);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--light-grey);
+}
+
+.hero {
+    position: relative;
+    margin-top: 70px;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    padding: 2rem;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 350px;
+    margin-top: -25px;
+    font-size: 1;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.fancy-heading {
+    font-family: 'Dancing Script', cursive;
+}
+
+#more-text {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+#more-text.visible {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.hero-text p {
+    margin-bottom: 1rem;
+}
+
+.photos {
+    padding-top: 2rem;
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.photos h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.photo-grid img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+.videos {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    background-color: var(--light-grey);
+}
+
+.videos h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.video-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.video-grid iframe {
+    width: 400px;
+    height: 250px;
+}
+
+.contact-link {
+    text-align: center;
+    padding: 2rem;
+}
+
+.contact-link a {
+    color: var(--medium-grey);
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 2px solid var(--medium-grey);
+    padding: 0.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.contact-link a:hover {
+    background-color: var(--medium-grey);
+    color: var(--white);
+}
+
+.kontakt-link {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 50px;
+}
+
+.kontakt-link a {
+    color: var(--medium-grey);
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 2px solid var(--medium-grey);
+    padding: 0.5rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.kontakt-link a:hover {
+    background-color: var(--medium-grey);
+    color: var(--white);
+}
+
+footer {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-in-out;
+    align-items: center; /* Vertikální zarovnání na střed */
+    justify-content: center; /* Horizontální zarovnání na střed */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomIn 0.3s ease-in-out;
+    margin: auto; /* Zajistí, že obrázek bude vycentrován */
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); }
+    to { transform: scale(1); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes zoomOut {
+    from { transform: scale(1); }
+    to { transform: scale(0.8); }
+}
+
+.modal.fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+.modal-content.zoom-out {
+    animation: zoomOut 0.3s ease-in-out;
+}
+
+.textik {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    margin-top: 120px;
+    margin-bottom: -50px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.textik h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.textik p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #555;
+    font-size: 1.3rem;
+}
+
+.formular {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    margin-top: 120px;
+    margin-bottom: -50px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    margin-bottom: 50px;
+}
+
+.formular h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.formular p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #555;
+    font-size: 1.3rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.instagram-button {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.instagram-button img {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.instagram-button img:hover {
+    transform: scale(1.1);
+}
+
+#toggle-more {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #a5a091;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#toggle-more:hover {
+    background-color: #8d8773;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#toggle-more:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fotky {
+    padding-top: 2rem;
+    text-align: center;
+    padding-bottom: 4rem;
+    margin-top: -30px;
+}
+
+.fotky h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.forky-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.fotky-grid img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Media Queries pro mobilní zobrazení */
+@media (max-width: 1000px) {
+    /* Skrytí obrázku homephoto */
+    .hero img {
+      display: none;
+    }
+  
+    /* Úprava textu O mně */
+    .hero-text {
+      position: static;
+      transform: none;
+      margin: 130px auto 2rem auto; /* margin-top: 130px pro mobilní zobrazení */
+      padding: 1rem;
+      max-width: 90%;
+      background-color: #fff; /* Bílé pozadí pro čitelnost */
+      color: var(--dark-grey);
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Jemný stín */
+    }
+  
+    /* Explicitní styl pro nadpis O mně */
+    .hero-text h2 {
+      font-size: 1.8rem;
+      color: var(--dark-grey);
+      margin-bottom: 1rem;
+      display: block;
+      font-weight: 700;
+      opacity: 1; /* Zajištění viditelnosti */
+    }
+  
+    /* Zajištění viditelnosti textu pod nadpisem */
+    .hero-text p {
+      font-size: 1rem;
+      color: var(--dark-grey);
+      opacity: 1;
+    }
+  
+    /* Vertikální rozložení fotek a videí */
+    .photo-grid, .video-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Přizpůsobení šířky obrázků a iframeů */
+    .photo-grid img, .video-grid iframe {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+  
+    /* Zmenšení velikosti nadpisů a textu */
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    /* Úprava tlačítka Více o mně */
+    #toggle-more {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    /* Úprava odkazu Kontaktujte mě */
+    .contact-link a {
+      font-size: 1.2rem;
+      padding: 0.5rem 1.5rem;
+    }
+  
+    /* Vertikální rozložení headeru */
+    .header-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Horizontální rozložení odkazů v nav-left a nav-right */
+    .nav-left, .nav-right {
+      flex-direction: row; /* Odkazy horizontálně */
+      justify-content: center;
+      margin: 0.5rem 0;
+    }
+  
+    /* Pořadí prvků */
+    header h1 {
+      order: 1; /* Nadpis nahoře */
+    }
+  
+    .nav-left {
+      order: 2; /* Odkazy z nav-left pod nadpisem */
+    }
+  
+    .nav-right {
+      order: 3; /* Odkazy z nav-right pod nav-left */
+    }
+  
+    /* Zvětšení tlačítka zavření modalu */
+    .close {
+      font-size: 30px;
+      top: 10px;
+      right: 20px;
+    }
+  
+    /* Zmenšení Instagram a YouTube tlačítek */
+    .instagram-button img {
+      width: 50px;
+    }
+   
+    /* Úprava margin-top pro textik na mobilech */
+    .textik {
+      margin-top: 160px;
+      font-size: 0.8rem;
+    }
+  }
+
+/* Styl pro odkazy ve footeru */
+footer a {
+    color: inherit; /* Zachová barvu textu rodiče (bílá nebo jiná barva ve footeru) */
+    text-decoration: underline; /* Přidá podtržení */
+}
+
+footer a:visited {
+    color: inherit; /* Zajistí, že navštívené odkazy mají stejnou barvu jako nenavštívené */
+}
+
+footer a:hover {
+    text-decoration: none; /* Volitelné: Odstraní podtržení při najetí myší */
+}
+
+footer a:focus, footer a:active {
+    outline: none; /* Odstraní obrys při kliknutí nebo zaostření */
+}
+
+.textik a {
+    color: inherit; /* Zachová barvu textu rodiče */
+    text-decoration: underline; /* Přidá podtržení */
+}
+
+.textik a:visited {
+    color: inherit; /* Zajistí, že navštívené odkazy mají stejnou barvu jako nenavštívené */
+}
+
+.textik a:hover {
+    text-decoration: none; /* Volitelné: Odstraní podtržení při najetí myší */
+}
+
+.textik a:focus, .textik a:active {
+    outline: none; /* Odstraní obrys při kliknutí nebo zaostření */
+}
+
+.event-content {
+    display: flex;
+    align-items: flex-start; /* Zarovná obsah nahoře */
+    gap: 1rem; /* Mezera mezi obrázkem a textem */
+    flex-wrap: wrap; /* Zajistí zalomení obsahu na menších obrazovkách */
+}
+
+.event-image {
+    max-width: 400px; /* Omezí šířku obrázku */
+    height: auto; /* Zachová poměr stran */
+    border-radius: 5px; /* Jemné zaoblení rohů */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Jemný stín */
+}
+
+.event-content p {
+    flex: 1; /* Text zabere zbývající prostor */
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: left;
+    padding-top: 80px;
+    padding-left: 30px;
+}
