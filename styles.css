@@ -109,22 +109,112 @@ nav a:hover {
 .hero-text {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.7);
     color: var(--white);
-    padding: 2rem;
+    padding: 2vw;
     max-width: 600px;
+    width: 80%;
+    font-size: 1vw;
     text-align: center;
     border-radius: 5px;
-    margin-left: 350px;
-    margin-top: -25px;
-    font-size: 1;
+    transition: all 0.3s ease;
 }
 
 .hero-text h2 {
-    font-size: 2rem;
+    font-size: 1.8vw;
     margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1vw;
+    margin-bottom: 1rem;
+}
+
+#toggle-more {
+    display: inline-block;
+    padding: 0.6vw 1.2vw;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #fff;
+    background-color: #a5a091;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#toggle-more:hover {
+    background-color: #8d8773;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1200px) {
+    .hero-text {
+        left: 65%;
+        max-width: 500px;
+        padding: 1.5vw;
+        font-size: 0.9vw;
+    }
+
+    .hero-text h2 {
+        font-size: 1.6vw;
+    }
+
+    .hero-text p {
+        font-size: 0.9vw;
+    }
+
+    #toggle-more {
+        padding: 0.5vw 1vw;
+        font-size: 0.9vw;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-text {
+        left: 50%;
+        max-width: 400px;
+        padding: 1vw;
+        font-size: 0.8vw;
+    }
+
+    .hero-text h2 {
+        font-size: 1.4vw;
+    }
+
+    .hero-text p {
+        font-size: 0.8vw;
+    }
+
+    #toggle-more {
+        padding: 0.4vw 0.8vw;
+        font-size: 0.8vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-text {
+        max-width: 300px;
+        padding: 0.8vw;
+        font-size: 0.7vw;
+    }
+
+    .hero-text h2 {
+        font-size: 1.2vw;
+    }
+
+    .hero-text p {
+        font-size: 0.7vw;
+    }
+
+    #toggle-more {
+        padding: 0.3vw 0.6vw;
+        font-size: 0.7vw;
+    }
 }
 
 .fancy-heading {
@@ -201,17 +291,23 @@ nav a:hover {
 }
 
 .contact-link a {
-    color: var(--medium-grey);
-    font-size: 1.5rem;
-    text-decoration: none;
-    border: 2px solid var(--medium-grey);
-    padding: 0.5rem 2rem;
-    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #fff; 
+    background-color: #9e9475; 
+    text-decoration: none; 
+    border-radius: 25px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
 }
 
 .contact-link a:hover {
-    background-color: var(--medium-grey);
-    color: var(--white);
+    background-color: #665d3e; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
 }
 
 .kontakt-link {
@@ -221,17 +317,24 @@ nav a:hover {
 }
 
 .kontakt-link a {
-    color: var(--medium-grey);
-    font-size: 1.5rem;
-    text-decoration: none;
-    border: 2px solid var(--medium-grey);
-    padding: 0.5rem 2rem;
-    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #fff; 
+    background-color: #9e9475;
+    text-decoration: none; 
+    border-radius: 25px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
 }
 
+
 .kontakt-link a:hover {
-    background-color: var(--medium-grey);
-    color: var(--white);
+    background-color: #665d3e;
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
 }
 
 footer {
@@ -255,8 +358,8 @@ footer {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
     animation: fadeIn 0.3s ease-in-out;
-    align-items: center; /* Vertikální zarovnání na střed */
-    justify-content: center; /* Horizontální zarovnání na střed */
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-content {
@@ -265,7 +368,7 @@ footer {
     max-width: 90%;
     max-height: 90%;
     animation: zoomIn 0.3s ease-in-out;
-    margin: auto; /* Zajistí, že obrázek bude vycentrován */
+    margin: auto;
     display: block;
 }
 
@@ -339,6 +442,36 @@ footer {
     line-height: 1.8;
     color: #555;
     font-size: 1.3rem;
+}
+
+@media (max-width: 1200px) {
+    .textik h2 {
+        font-size: 1.6rem;
+    }
+
+    .textik p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .textik h2 {
+        font-size: 1.4rem;
+    }
+
+    .textik p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .textik h2 {
+        font-size: 1.2rem;
+    }
+
+    .textik p {
+        font-size: 0.9rem;
+    }
 }
 
 .formular {
@@ -432,7 +565,7 @@ footer {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background-color: #a5a091;
+    background-color: #9e9475;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -441,7 +574,7 @@ footer {
 }
 
 #toggle-more:hover {
-    background-color: #8d8773;
+    background-color: #665d3e;
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
@@ -476,58 +609,50 @@ footer {
     object-fit: cover;
 }
 
-/* Media Queries pro mobilní zobrazení */
 @media (max-width: 1000px) {
-    /* Skrytí obrázku homephoto */
     .hero img {
       display: none;
     }
   
-    /* Úprava textu O mně */
     .hero-text {
       position: static;
       transform: none;
-      margin: 130px auto 2rem auto; /* margin-top: 130px pro mobilní zobrazení */
+      margin: 130px auto 2rem auto;
       padding: 1rem;
       max-width: 90%;
-      background-color: #fff; /* Bílé pozadí pro čitelnost */
+      background-color: #fff;
       color: var(--dark-grey);
       text-align: center;
       border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Jemný stín */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
   
-    /* Explicitní styl pro nadpis O mně */
     .hero-text h2 {
       font-size: 1.8rem;
       color: var(--dark-grey);
       margin-bottom: 1rem;
       display: block;
       font-weight: 700;
-      opacity: 1; /* Zajištění viditelnosti */
+      opacity: 1;
     }
   
-    /* Zajištění viditelnosti textu pod nadpisem */
     .hero-text p {
       font-size: 1rem;
       color: var(--dark-grey);
       opacity: 1;
     }
   
-    /* Vertikální rozložení fotek a videí */
     .photo-grid, .video-grid {
       flex-direction: column;
       align-items: center;
     }
   
-    /* Přizpůsobení šířky obrázků a iframeů */
     .photo-grid img, .video-grid iframe {
       width: 100%;
       max-width: 400px;
       margin-bottom: 1rem;
     }
   
-    /* Zmenšení velikosti nadpisů a textu */
     h2 {
       font-size: 1.5rem;
     }
@@ -536,118 +661,191 @@ footer {
       font-size: 1rem;
     }
   
-    /* Úprava tlačítka Více o mně */
     #toggle-more {
       font-size: 0.9rem;
       padding: 0.5rem 1rem;
     }
   
-    /* Úprava odkazu Kontaktujte mě */
     .contact-link a {
       font-size: 1.2rem;
       padding: 0.5rem 1.5rem;
     }
   
-    /* Vertikální rozložení headeru */
     .header-content {
       flex-direction: column;
       align-items: center;
     }
   
-    /* Horizontální rozložení odkazů v nav-left a nav-right */
     .nav-left, .nav-right {
-      flex-direction: row; /* Odkazy horizontálně */
+      flex-direction: row;
       justify-content: center;
       margin: 0.5rem 0;
     }
   
-    /* Pořadí prvků */
     header h1 {
-      order: 1; /* Nadpis nahoře */
+      order: 1;
     }
   
     .nav-left {
-      order: 2; /* Odkazy z nav-left pod nadpisem */
+      order: 2;
     }
   
     .nav-right {
-      order: 3; /* Odkazy z nav-right pod nav-left */
+      order: 3;
     }
   
-    /* Zvětšení tlačítka zavření modalu */
     .close {
       font-size: 30px;
       top: 10px;
       right: 20px;
     }
   
-    /* Zmenšení Instagram a YouTube tlačítek */
     .instagram-button img {
       width: 50px;
     }
    
-    /* Úprava margin-top pro textik na mobilech */
     .textik {
       margin-top: 160px;
       font-size: 0.8rem;
     }
-  }
+}
 
-/* Styl pro odkazy ve footeru */
 footer a {
-    color: inherit; /* Zachová barvu textu rodiče (bílá nebo jiná barva ve footeru) */
-    text-decoration: underline; /* Přidá podtržení */
+    color: inherit;
+    text-decoration: underline;
 }
 
 footer a:visited {
-    color: inherit; /* Zajistí, že navštívené odkazy mají stejnou barvu jako nenavštívené */
+    color: inherit;
 }
 
 footer a:hover {
-    text-decoration: none; /* Volitelné: Odstraní podtržení při najetí myší */
+    text-decoration: none;
 }
 
 footer a:focus, footer a:active {
-    outline: none; /* Odstraní obrys při kliknutí nebo zaostření */
+    outline: none;
 }
 
 .textik a {
-    color: inherit; /* Zachová barvu textu rodiče */
-    text-decoration: underline; /* Přidá podtržení */
+    color: inherit;
+    text-decoration: underline;
 }
 
 .textik a:visited {
-    color: inherit; /* Zajistí, že navštívené odkazy mají stejnou barvu jako nenavštívené */
+    color: inherit;
 }
 
 .textik a:hover {
-    text-decoration: none; /* Volitelné: Odstraní podtržení při najetí myší */
+    text-decoration: none;
 }
 
 .textik a:focus, .textik a:active {
-    outline: none; /* Odstraní obrys při kliknutí nebo zaostření */
+    outline: none;
 }
 
 .event-content {
     display: flex;
-    align-items: flex-start; /* Zarovná obsah nahoře */
-    gap: 1rem; /* Mezera mezi obrázkem a textem */
-    flex-wrap: wrap; /* Zajistí zalomení obsahu na menších obrazovkách */
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .event-image {
-    max-width: 400px; /* Omezí šířku obrázku */
-    height: auto; /* Zachová poměr stran */
-    border-radius: 5px; /* Jemné zaoblení rohů */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Jemný stín */
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    .event-image {
+        width: 90%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .event-image {
+        width: 60%;
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
 }
 
 .event-content p {
-    flex: 1; /* Text zabere zbývající prostor */
+    flex: 1;
     font-size: 1.5rem;
     line-height: 1.6;
     color: #555;
     text-align: left;
-    padding-top: 80px;
+    padding-top: 15px;
     padding-left: 30px;
+}
+
+@media (max-width: 1200px) {
+    .event-content p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .event-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .event-content p {
+        font-size: 1rem;
+    }
+}
+
+.footer-link {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--light-grey);
+}
+
+@media (max-width: 1000px) {
+    .footer-link {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.koncert-fotky img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .koncert-fotky img {
+    width: 90%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .koncert-fotky img {
+    width: 60%;
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
 }
