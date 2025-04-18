@@ -41,11 +41,11 @@
     <div class="textik">
       <h2><a href="https://www.slavkovak.cz/akce/dny-slavkova-6/" target="_blank">31. 5. 2025 - Dny Slavkova</a></h2>
       <div class="event-content">
-        <img src="images/koncerty/dnyslavkova.jpeg" alt="Dny Slavkova" class="event-image">
+        <img src="images/koncerty/dnyslavkovka.png" alt="Dny Slavkova" class="event-image">
         <p>
           🎹 Dny Slavkova 2025 <br>
-          🕐 17:00-18:00<br>
-          📍 Hlavní stage na Palackého náměstí
+          Zazní filmová hudba, popové hity a další oblíbené melodie. <br>
+          Přijďte si užít krásný den plný hudby a zábavy! <br>
         </p>
       </div>
     </div>
@@ -57,5 +57,46 @@
     <p>Adam Koubek 2025 - Made with ♥ by <a href="https://www.instagram.com/qvent.creative/" target="_blank" class="footer-link">Qvent Creative</a></p>
   </footer>
   
+ <!-- Modal pro full screen zobrazení obrázku -->
+ <div id="modal" class="modal">
+  <span id="close" class="close">×</span>
+  <img id="modal-img" class="modal-content animate" alt="Zvětšený obrázek">
+</div>
+
+<script>
+  const gridImages = document.querySelectorAll('.event-image');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.getElementById('close');
+
+  gridImages.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'block';
+      modal.classList.remove('fade-out'); 
+      modalImg.classList.remove('zoom-out');
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Funkce pro zavření modalu s animací
+  function closeModal() {
+    modal.classList.add('fade-out'); 
+    modalImg.classList.add('zoom-out'); 
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 300); 
+  }
+</script>
+</body>
+</html>
+
 </body>
 </html>
