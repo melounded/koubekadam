@@ -784,9 +784,14 @@ footer a:focus, footer a:active {
 
 .event-content {
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: column; /* Obsah uspořádán vertikálně */
+    align-items: center; /* Vycentrování na střed */
+    text-align: center; /* Zarovnání textu na střed */
+    padding: 20px; /* Vnitřní odsazení */
+    border: 1px solid #ccc; /* Rámeček kolem obsahu */
+    border-radius: 8px; /* Zaoblené rohy */
+    background-color: #f9f9f9; /* Jemné pozadí */
+    margin-bottom: 20px; /* Mezera pod event-content */
 }
 
 .event-image {
@@ -844,6 +849,37 @@ footer a:focus, footer a:active {
     }
 }
 
+@media (max-width: 500px) {
+  .event-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .event-image {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+
+  .event-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .event-content {
+    margin-bottom: 30px; /* Větší mezera pro lepší čitelnost */
+    padding: 15px; /* Menší vnitřní odsazení */
+  }
+
+  .calendar-button {
+    font-size: 14px; /* Menší text tlačítka */
+    padding: 10px 20px; /* Menší vnitřní odsazení tlačítka */
+  }
+}
+
 .footer-link {
     color: inherit;
     text-decoration: underline;
@@ -886,4 +922,24 @@ footer a:focus, footer a:active {
     max-width: 200px;
     margin-bottom: 1rem;
   }
+}
+
+/* Styl pro tlačítko "Přidat do Google Kalendáře" */
+.calendar-button {
+  display: inline-block;
+  margin-top: 15px; /* Mezera nad tlačítkem */
+  padding: 12px 24px; /* Vnitřní odsazení */
+  background-color: #2699cb; /* Zelené pozadí */
+  color: #fff; /* Bílý text */
+  text-decoration: none; /* Odstranění podtržení */
+  border-radius: 5px; /* Zaoblené rohy */
+  font-size: 16px; /* Velikost textu */
+  font-weight: bold; /* Tučný text */
+  text-align: center; /* Zarovnání textu */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Animace při hoveru */
+}
+
+.calendar-button:hover {
+  background-color: #126d88; /* Tmavší zelená při hoveru */
+  transform: scale(1.05); /* Mírné zvětšení při hoveru */
 }
