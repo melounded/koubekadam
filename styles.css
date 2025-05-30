@@ -296,7 +296,7 @@ nav a:hover {
     font-size: 1.2rem; 
     font-weight: bold;
     color: #fff; 
-    background-color: #9e9475; 
+    background-color: #9e9475;
     text-decoration: none; 
     border-radius: 25px; 
     transition: all 0.3s ease; 
@@ -304,11 +304,13 @@ nav a:hover {
     text-align: center;
 }
 
+
 .contact-link a:hover {
-    background-color: #665d3e; 
+    background-color: #665d3e;
     transform: translateY(-2px); 
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
 }
+
 
 .kontakt-link {
     text-align: center;
@@ -926,20 +928,77 @@ footer a:focus, footer a:active {
 
 /* Styl pro tlačítko "Přidat do Google Kalendáře" */
 .calendar-button {
-  display: inline-block;
-  margin-top: 15px; /* Mezera nad tlačítkem */
-  padding: 12px 24px; /* Vnitřní odsazení */
-  background-color: #2699cb; /* Zelené pozadí */
-  color: #fff; /* Bílý text */
-  text-decoration: none; /* Odstranění podtržení */
-  border-radius: 5px; /* Zaoblené rohy */
-  font-size: 16px; /* Velikost textu */
-  font-weight: bold; /* Tučný text */
-  text-align: center; /* Zarovnání textu */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Animace při hoveru */
+    display: inline-block;
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #fff; 
+    background-color: #428aff;
+    text-decoration: none; 
+    border-radius: 25px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
 }
 
+
 .calendar-button:hover {
-  background-color: #126d88; /* Tmavší zelená při hoveru */
-  transform: scale(1.05); /* Mírné zvětšení při hoveru */
+    background-color: #1856b8;
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+
+/* Kontakt button */
+.contakt-link a {
+    display: inline-block;
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #fff; 
+    background-color: #9e9475;
+    text-decoration: none; 
+    border-radius: 25px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+
+.contakt-link a:hover {
+    background-color: #665d3e;
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+
+/* Calendar button - stejný styl, jen modrý */
+.calendar-button a {
+    display: inline-block;
+    padding: 1rem 2rem; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    color: #fff; 
+    background-color: #2176ff;
+    text-decoration: none; 
+    border-radius: 25px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+
+.calendar-button:hover {
+    background-color: #1856b8;
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+}
+
+
+/* Vycentrování buttonu v event-content */
+.event-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
