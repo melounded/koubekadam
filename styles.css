@@ -854,3 +854,47 @@ footer a:focus, footer a:active {
   margin-bottom: 0,1em;
   line-height: 1.6;
 }
+
+.ticket-warning {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+.ticket-warning span {
+  background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+  color: #7a4a00;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  box-shadow: 0 2px 12px rgba(255, 174, 0, 0.15);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+
+@media (max-width: 600px) {
+  .ticket-warning span {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 12px;
+    margin-top: -18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ticket-warning span {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 8px;
+    margin-top: -30px;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1);}
+  50% { transform: scale(1.08);}
+  100% { transform: scale(1);}
+}

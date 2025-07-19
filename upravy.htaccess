@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Pokud někdo zadá URL bez přípony a existuje .html soubor, přesměruj na něj
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Nepřepisuj, pokud URL už končí na .html (plakáty, QR kódy zůstanou funkční)
+RewriteRule ^.*\.html$ - [L]
