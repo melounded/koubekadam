@@ -1,38 +1,27 @@
 RewriteEngine On
 
-# --- Security headers ---
-<IfModule mod_headers.c>
-Header set X-Content-Type-Options "nosniff"
-Header set X-Frame-Options "SAMEORIGIN"
-Header set X-XSS-Protection "1; mode=block"
-</IfModule>
+# www → non-www (opravená doména)
+RewriteCond %{HTTP_HOST} ^www\.koubekadam\.cz$ [NC]
+RewriteRule ^(.*)$ https://koubekadam.cz/$1 [L,R=301]
 
-# --- HTTP to HTTPS redirect ---
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# --- www → non-www ---
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
-
-# --- index.html → / ---
+# index.html → /
 RewriteRule ^index\.html$ / [R=301,L]
 
-# --- Only rewrite if not a real file or directory ---
+# /kontakt → kontakt.html (pokud existuje)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-# /kontakt → kontakt.html (pokud existuje)
+RewriteCond %{REQUEST_URI} !\.html$
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^([^/]+)/?$ $1.html [L]
 
-# /posts/slug → posts/slug.html (pokud existuje)
+# --- /posts/slug → posts/slug.html (pokud existuje) ---
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.html$
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^posts/([^/]+)/?$ posts/$1.html [L]
 
-# --- Block .html in URL except 404.html ---
-RewriteCond %{ENV:REDIRECT_STATUS} =""
+# Blokace přímého přístupu k .html souborům (kromě 404.html)
+RewriteCond %{THE_REQUEST} \s/+(.*)\.html[\s?] [NC]
 RewriteCond %{REQUEST_URI} !^/404\.html$
-RewriteRule ^(.*)\.html$ /404.html [R=302,L]
-
-# Pls nerozbij se. Jestli se v tomto hrabeš dávej bacha, nebo shodíš celou stránku...
+RewriteRule ^(.*)\.html$ /$1? [R=301,L]
